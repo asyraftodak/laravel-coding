@@ -1,22 +1,22 @@
 <?php
 
-namespace {{ namespace }};
+namespace Modules\{{ class }}s\Models;
 
 use Modules\CustomModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
 class {{ class }} extends CustomModel
 {
     use HasFactory;
 
-    public function newEloquentBuilder($query)
+    public function newEloquentBuilder($query): {{ class }}QueryBuilder
     {
-        parent::newEloquentBuilder($query);
+        return new {{ class }}QueryBuilder($query);
     }
 
     public static function newFactory()
     {
-        // TODO: implement
+        
+        return {{ class }}Factory::new();
     }
 }
