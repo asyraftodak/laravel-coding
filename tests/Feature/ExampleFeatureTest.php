@@ -7,7 +7,6 @@ use Tests\FeatureTestCase;
 
 class ExampleFeatureTest extends FeatureTestCase
 {
-
     /**
      * A basic test example.
      *
