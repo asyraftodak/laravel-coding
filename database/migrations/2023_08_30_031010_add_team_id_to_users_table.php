@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('{{ table }}', function (Blueprint $table) {
-            $table->id();
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreignId('team_id')
+                ->after('id')
+                ->index()
+                ->nullable();
         });
     }
 
@@ -23,6 +24,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('{{ table }}');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn(['team_id']);
+        });
     }
 };
