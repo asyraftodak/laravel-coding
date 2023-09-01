@@ -11,6 +11,7 @@ use Modules\Organisations\Models\Organisation;
 class OrganisationFactory extends Factory
 {
     protected $model = Organisation::class;
+
     /**
      * Define the model's default state.
      *

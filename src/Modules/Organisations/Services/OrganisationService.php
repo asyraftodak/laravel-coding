@@ -2,9 +2,9 @@
 
 namespace Modules\Organisations\Services;
 
-use Modules\Organisations\Models\Organisation;
 use Modules\Organisations\DataTransferObjects\OrganisationDto;
 use Modules\Organisations\Interfaces\OrganisationServiceInterface;
+use Modules\Organisations\Models\Organisation;
 
 class OrganisationService implements OrganisationServiceInterface
 {
@@ -12,7 +12,7 @@ class OrganisationService implements OrganisationServiceInterface
     {
         /** @var Organisation */
         $organisation = Organisation::updateOrCreate([
-            'id' => 1
+            'id' => 1,
         ], [
             'name' => $dto->name,
             'address' => $dto->address,
