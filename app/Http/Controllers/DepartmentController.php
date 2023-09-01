@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Department\StoreRequest;
 use App\Http\Requests\Department\StoreManyRequest;
+use App\Http\Requests\Department\StoreRequest;
 use App\Http\Requests\Department\UpdateRequest;
 use Modules\Departments\DataTransferObjects\DepartmentDto;
 use Modules\Departments\Interfaces\DepartmentServiceInterface;

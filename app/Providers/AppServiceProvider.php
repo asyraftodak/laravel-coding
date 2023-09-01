@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
 use Modules\Departments\Interfaces\DepartmentServiceInterface;
 use Modules\Departments\Services\DepartmentService;
+use Modules\Profiles\Interfaces\ProfileServiceInterface;
+use Modules\Profiles\Services\ProfileService;
 use Modules\Settings\Interfaces\SettingServiceInterface;
 use Modules\Settings\Services\SettingService;
 
@@ -24,6 +26,11 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(
             DepartmentServiceInterface::class,
             DepartmentService::class
+        );
+
+        $this->app->bind(
+            ProfileServiceInterface::class,
+            ProfileService::class
         );
     }
 

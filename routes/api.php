@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,13 +16,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('guest')->group(function () {
-    Route::post('/login', LoginController::class);
+Route::post('/login', LoginController::class);
 
-    Route::prefix('/department')->name('department.')->group(function () {
-        Route::get('/', [DepartmentController::class, 'index']);
-        Route::post('/', [DepartmentController::class, 'store']);
-        Route::post('/storeMany', [DepartmentController::class, 'storeMany']);
-        Route::get('/{department:id}', [DepartmentController::class, 'show']);
-    });
+Route::prefix('/department')->group(function () {
+    Route::get('/', [DepartmentController::class, 'index']);
+    Route::post('/', [DepartmentController::class, 'store']);
+    Route::post('/storeMany', [DepartmentController::class, 'storeMany']);
+    Route::get('/{department:id}', [DepartmentController::class, 'show']);
+});
+
+Route::prefix('/profile')->group(function () {
+    Route::get('/{profile:id}', [ProfileController::class, 'show']);
+    Route::post('/', [ProfileController::class, 'store']);
+    Route::put('/{profile:id}', [ProfileController::class, 'update']);
 });

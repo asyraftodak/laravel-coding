@@ -1,9 +1,6 @@
 <?php
 
-use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,12 +16,3 @@ use Illuminate\Support\Str;
 Route::get('/', function () {
     return 'Welcome to Hadir';
 });
-
-Route::post('/users', function (Request $request) {
-
-    return User::create([
-        'name' => $request->name,
-        'email' => $request->email,
-        'password' => Str::random(10),
-    ]);
-})->middleware('role:admin');
