@@ -12,6 +12,8 @@ use Modules\Departments\Interfaces\DepartmentServiceInterface;
 use Modules\Departments\Services\DepartmentService;
 use Modules\OneTimePasswords\Interfaces\OneTimePasswordServiceInterface;
 use Modules\OneTimePasswords\Services\OneTimePasswordService;
+use Modules\Organisations\Interfaces\OrganisationServiceInterface;
+use Modules\Organisations\Services\OrganisationService;
 use Modules\Profiles\Interfaces\ProfileServiceInterface;
 use Modules\Profiles\Services\ProfileService;
 use Modules\Settings\Interfaces\SettingServiceInterface;
@@ -37,6 +39,11 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(
             VerifyServiceInterface::class,
             VerifyService::class
+        );
+
+        $this->app->bind(
+            OrganisationServiceInterface::class,
+            OrganisationService::class
         );
 
         $this->app->bind(

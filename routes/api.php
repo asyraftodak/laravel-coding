@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\VerifyController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\OrganisationController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,15 +21,20 @@ use Illuminate\Support\Facades\Route;
 Route::post('/login', LoginController::class);
 Route::post('/verify', VerifyController::class);
 
-Route::prefix('/department')->group(function () {
+Route::prefix('department')->group(function () {
     Route::get('/', [DepartmentController::class, 'index']);
     Route::post('/', [DepartmentController::class, 'store']);
     Route::post('/storeMany', [DepartmentController::class, 'storeMany']);
     Route::get('/{department:id}', [DepartmentController::class, 'show']);
 });
 
-Route::prefix('/profile')->group(function () {
+Route::prefix('profile')->group(function () {
     Route::get('/{profile:id}', [ProfileController::class, 'show']);
     Route::post('/', [ProfileController::class, 'store']);
     Route::put('/{profile:id}', [ProfileController::class, 'update']);
+});
+
+Route::prefix('organisation')->group(function () {
+    Route::get('/', [OrganisationController::class, 'show']);
+    Route::put('/', [OrganisationController::class, 'update']);
 });
