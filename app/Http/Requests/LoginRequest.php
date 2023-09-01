@@ -3,17 +3,11 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\Enum;
+use Modules\Auth\Enums\LoginMode;
 
 class LoginRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
-    public function authorize(): bool
-    {
-        return false;
-    }
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -22,7 +16,22 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'email' => [
+                'required_if:mode,'.LoginMode::EMAIL->value,
+                'email',
+                'exists:users,email',
+            ],
+            'mode' => [
+                'required',
+                'string',
+                new Enum(LoginMode::class),
+            ],
+            'mobile_no' => [
+                'required_if:mode,'.LoginMode::MOBILE_NO->value,
+                'string',
+                'regex:/^60/',
+                'exists:users,mobile_no',
+            ],
         ];
     }
 }

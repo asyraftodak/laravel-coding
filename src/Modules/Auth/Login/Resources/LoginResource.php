@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Modules\CustomResource;
 
 /**
- * @property \App\Models\User $resource
+ * @property \Modules\Users\Models\User $resource
  */
 class LoginResource extends CustomResource
 {
@@ -19,6 +19,7 @@ class LoginResource extends CustomResource
     {
         return [
             'email' => $this->resource->email,
+            'uuid' => $this->resource->uuid,
         ];
     }
 }

@@ -4,6 +4,8 @@ namespace Modules\{{ class }}s\Models;
 
 use Modules\CustomModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Modules\{{ class }}s\Builders\{{ class }}QueryBuilder;
+use Database\Factories\{{ class }}Factory;
 
 class {{ class }} extends CustomModel
 {

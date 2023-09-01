@@ -2,9 +2,10 @@
 
 namespace Modules\Auth\Login\Interfaces;
 
-use App\Models\User;
+use Modules\Auth\Enums\LoginMode;
+use Modules\Users\Models\User;
 
 interface LoginServiceInterface
 {
-    public function login(string $email): User;
+    public function login(string $email, LoginMode $mode): User;
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\VerifyController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -17,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('/login', LoginController::class);
+Route::post('/verify', VerifyController::class);
 
 Route::prefix('/department')->group(function () {
     Route::get('/', [DepartmentController::class, 'index']);

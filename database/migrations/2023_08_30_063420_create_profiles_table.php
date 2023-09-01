@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users')->index();
             $table->string('full_name');
-            $table->string('mobile_no')->nullable();
             $table->string('position');
             $table->foreignId('department_id')->nullable()->index();
             $table->timestamp('created_at')->useCurrent();

@@ -2,12 +2,12 @@
 
 namespace Modules\Profiles\Models;
 
-use App\Models\User;
 use Database\Factories\ProfileFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\CustomModel;
 use Modules\Profiles\Builders\ProfileQueryBuilder;
+use Modules\Users\Models\User;
 
 class Profile extends CustomModel
 {

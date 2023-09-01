@@ -2,11 +2,11 @@
 
 namespace Modules\Settings\Services;
 
-use App\Models\User;
 use Modules\Settings\DataTransferObjects\SettingDto;
 use Modules\Settings\Exceptions\SettingException;
 use Modules\Settings\Interfaces\SettingServiceInterface;
 use Modules\Settings\Models\Setting;
+use Modules\Users\Models\User;
 
 class SettingService implements SettingServiceInterface
 {

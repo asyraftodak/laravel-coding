@@ -2,13 +2,31 @@
 
 namespace Modules\Auth\Login\Services;
 
-use App\Models\User;
+use Modules\Auth\Enums\LoginMode;
 use Modules\Auth\Login\Interfaces\LoginServiceInterface;
+use Modules\OneTimePasswords\Interfaces\OneTimePasswordServiceInterface;
+use Modules\Users\Models\User;
 
 class LoginService implements LoginServiceInterface
 {
-    public function login(string $email): User
+    public function __construct(
+        protected OneTimePasswordServiceInterface $service
+    ) {
+    }
+
+    public function login(string $value, LoginMode $mode): User
     {
-        return User::where('email', $email)->first();
+        /** @var User */
+        $user = User::getUserAtLogin($value, $mode)->first();
+
+        $otp = $this->service->generateOneTimePassword($user);
+
+        $this->service->sendOneTimePassword(
+            $otp,
+            LoginMode::from($mode->value),
+            $user
+        );
+
+        return $user;
     }
 }

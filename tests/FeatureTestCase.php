@@ -2,11 +2,11 @@
 
 namespace Tests;
 
-use App\Models\User;
 use Illuminate\Foundation\Testing\LazilyRefreshDatabase;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Modules\Auth\Enums\RoleType;
 use Modules\Teams\Models\Team;
+use Modules\Users\Models\User;
 
 abstract class FeatureTestCase extends BaseTestCase
 {

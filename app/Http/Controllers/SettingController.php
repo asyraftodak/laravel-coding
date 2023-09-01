@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\App;
+namespace App\Http\Controllers;
 
 use App\Http\Requests\SettingStoreRequest;
 use Modules\Settings\DataTransferObjects\SettingDto;
 use Modules\Settings\Interfaces\SettingServiceInterface;
 use Modules\Settings\Resources\SettingResource;
 
-class SettingController
+class SettingController extends Controller
 {
     public function __construct(
         protected SettingServiceInterface $service

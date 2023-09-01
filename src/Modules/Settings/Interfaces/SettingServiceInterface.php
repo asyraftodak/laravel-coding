@@ -2,9 +2,9 @@
 
 namespace Modules\Settings\Interfaces;
 
-use App\Models\User;
 use Modules\Settings\DataTransferObjects\SettingDto;
 use Modules\Settings\Models\Setting;
+use Modules\Users\Models\User;
 
 interface SettingServiceInterface
 {

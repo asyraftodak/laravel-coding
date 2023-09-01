@@ -2,8 +2,8 @@
 
 namespace Modules\Settings\Builders;
 
-use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
+use Modules\Users\Models\User;
 
 class SettingQueryBuilder extends Builder
 {

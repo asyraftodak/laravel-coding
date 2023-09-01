@@ -2,10 +2,10 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Settings\Enums\SettingType;
 use Modules\Settings\Models\Setting;
+use Modules\Users\Models\User;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<Setting>
