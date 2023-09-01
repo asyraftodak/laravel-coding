@@ -16,7 +16,7 @@ class StoreRequest extends FormRequest
         return [
             'user_id' => [
                 'required',
-                'exists:users,id'
+                'exists:users,id',
             ],
             'department_id' => [
                 'required',
@@ -36,7 +36,7 @@ class StoreRequest extends FormRequest
                 'required',
                 'string',
                 'max:255',
-            ]
+            ],
         ];
     }
 }

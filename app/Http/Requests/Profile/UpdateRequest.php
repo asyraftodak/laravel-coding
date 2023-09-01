@@ -32,7 +32,7 @@ class UpdateRequest extends FormRequest
                 'required',
                 'string',
                 'max:255',
-            ]
+            ],
         ];
     }
 }

@@ -8,7 +8,7 @@ use App\Http\Requests\Profile\UpdateRequest;
 readonly class ProfileDto
 {
     public function __construct(
-        public string|null $user_id,
+        public ?string $user_id,
         public string $mobile_no,
         public string $department_id,
         public string $position,

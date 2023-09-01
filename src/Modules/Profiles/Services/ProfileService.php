@@ -25,7 +25,6 @@ class ProfileService implements ProfileServiceInterface
 
     public function update(ProfileDto $dto, Profile $profile): Profile
     {
-        /** @var Profile */
         $profile->update([
             'department_id' => $dto->department_id,
             'mobile_no' => $dto->mobile_no,

@@ -5,7 +5,6 @@ namespace Database\Factories;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Departments\Models\Department;
-use Modules\Positions\Models\Position;
 use Modules\Profiles\Models\Profile;
 
 /**
